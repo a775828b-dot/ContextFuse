@@ -1,0 +1,20 @@
+[Unit]
+Description=ContextFuse llama-server context proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/contextfuse
+Environment=PROXY_BACKEND_URL=http://localhost:8000
+Environment=PROXY_MODEL_ID=gemma4-26b-iq4xs-128k
+Environment=PROXY_CONTEXT_LIMIT=131072
+Environment=PROXY_TRIGGER=75000
+Environment=PROXY_CD_POINT=30000
+Environment=PROXY_LOG_FILE=/var/log/contextfuse.log
+ExecStart=/opt/contextfuse/proxy-venv/bin/python /opt/contextfuse/context_proxy.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
