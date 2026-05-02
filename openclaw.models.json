@@ -1,0 +1,20 @@
+{
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "local_gemma4_proxy": {
+        "baseUrl": "http://localhost:8001",
+        "api": "anthropic-messages",
+        "apiKey": "local-dummy-key",
+        "models": [
+          {
+            "id": "gemma4-26b-iq4xs-128k",
+            "name": "Gemma 4 26B (local via ContextFuse)",
+            "contextWindow": 120000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  }
+}
