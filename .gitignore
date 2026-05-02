@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+proxy-venv/
+
+# Local configuration and secrets
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
+known_hosts
+
+# Runtime logs and local state
+*.log
+*.log.*
+contextfuse.log*
+proxy.log*
+proxy.console.log*
+sessions/
+*.session
+
+# Client/tool local state
+.claude/
+.openclaw/
+settings.json
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
